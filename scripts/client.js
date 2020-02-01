@@ -37,6 +37,8 @@ let exampleRoster = [exampleEmployee1, exampleEmployee2, exampleEmployee3, examp
 function onReady(){
     console.log('jq');
     displayInfo();
+    //set up click listeners on existing submit button
+    $('#addEmployeeButton').on('click', addNewEmployee);
 }
 
 ///-----FUNCTIONS-----///
@@ -70,7 +72,32 @@ function addSalaries(){
     let totalSalary=0;
     //go through employee list
     for (employee of exampleRoster){
-        totalSalary+=employee.annualSalary;
+        totalSalary+=Number(employee.annualSalary);
     }
     return totalSalary;
+}
+
+function addNewEmployee(){
+    //using values from the input boxes, make new employeeObject
+    let employeeObject= {
+        firstName: $('#firstNameIn').val(),
+        lastName: $('#lastNameIn').val(),
+        employeeID: $('#employeeIDIn').val(),
+        title: $('#titleIn').val(),
+        annualSalary: $('#annualSalaryIn').val(),
+    }
+    //add that new employeeObject to the array of employee objects
+    exampleRoster.push(employeeObject);
+    //display the new list of employees and the total labor cost
+    displayInfo();
+    //clear the input fields
+    $('#firstNameIn').val('');
+    $('#lastNameIn').val('');
+    $('#employeeIDIn').val('');
+    $('#titleIn').val('');
+    $('#annualSalaryIn').val('');
+}
+
+function removeEmployee(){
+    
 }
