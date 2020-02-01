@@ -56,7 +56,7 @@ function displayInfo(){
                 <td>${employee.lastName}</td>
                 <td class="id-number">${employee.employeeID}</td>
                 <td>${employee.title}</td>
-                <td>${employee.annualSalary}</td>
+                <td>$${employee.annualSalary}</td>
                 <td><button class="edit-remove">Remove</button></td>
             </tr>
         `)   
@@ -65,9 +65,10 @@ function displayInfo(){
     //target span in h3 that shows it 
     let sumSpan=$('#total-cost span');
     let totalMonthly=addSalaries()/12;
+    let totalMonthlyRounded=totalMonthly.toFixed(2);
     sumSpan.empty();
-    sumSpan.append(` ${totalMonthly}`);
-    if (totalMonthly>20000){
+    sumSpan.append(` $${totalMonthlyRounded}`);
+    if (totalMonthlyRounded>20000){
         sumSpan.css('background-color', 'red');
     }else{
         sumSpan.css('background-color', 'inherit');
