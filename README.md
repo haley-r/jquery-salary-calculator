@@ -1,9 +1,14 @@
-# Project Name
+# JQuery Salary Calculator
 
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+## Weekend Challenge #1
 
-## Description
+_Completed Jan 31-Feb 3_
 
-Your project description goes here. What problem did you solve? How did you solve it?
+This program allows the user to add employees to a database by entering their first and last names, ID number, title, and annual salary. It displays the total monthly labor cost based on all employees' salary information. The user can also remove employees to see adjusted labor cost.
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+## Built With
+
+JQuery
+
+## Acknowledgement
+Thanks to [Prime Digital Academy](www.primeacademy.io) in Minneapolis, Casie, Dev, and the Chien Cohort (woof).

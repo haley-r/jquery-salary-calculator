@@ -119,6 +119,6 @@ function removeEmployee(){
         }
     }//end for
 }//end removeEmployee
-////this function won't work if it the employee annual salary contains the same string of numbers as the employee ID. should be more specific, but it works at a basic level now.
+////this function won't work if it the employee annual salary contains the same string of numbers as the employee ID. should be more specific, but it works at a basic level now. maybe use siblings method to just select siblings with the class of whatever I gave the ID td
 
 
