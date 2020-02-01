@@ -37,8 +37,10 @@ let exampleRoster = [exampleEmployee1, exampleEmployee2, exampleEmployee3, examp
 function onReady(){
     console.log('jq');
     displayInfo();
-    //set up click listeners on existing submit button
+    //set up click listener on existing submit button
     $('#addEmployeeButton').on('click', addNewEmployee);
+    //set up click listeners on not-yet existing employee delete buttons
+    $('#employee-table tbody').on('click', '.edit-remove', removeEmployee);
 }
 
 ///-----FUNCTIONS-----///
@@ -99,5 +101,15 @@ function addNewEmployee(){
 }
 
 function removeEmployee(){
-    
+    let buttonElement = $(this);
+    let tdElement = buttonElement.parent();
+    let trElement= tdElement.parent();
+    trElement.remove();
 }
+
+// function whoAreParents(){
+//     console.log("parents are the ones who really care");
+//     console.log('the parent of body is', $('body').parent());
+// }
+
+// whoAreParents();
