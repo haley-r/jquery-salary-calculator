@@ -32,16 +32,14 @@ let exampleEmployee4 = {
     annualSalary: 1000000,
 }
 
-let exampleRoster = [exampleEmployee1, exampleEmployee2, exampleEmployee3, exampleEmployee4];
+let employeeRoster = [];
 
 function onReady(){
-    console.log('jq');
-    displayInfo();
     //set up click listener on existing submit button
     $('#addEmployeeButton').on('click', addNewEmployee);
     //set up click listeners on not-yet existing employee delete buttons
     $('#employee-table tbody').on('click', '.edit-remove', removeEmployee);
-}
+}//end onReady
 
 ///-----FUNCTIONS-----///
 function displayInfo(){
@@ -50,7 +48,7 @@ function displayInfo(){
     //empty table body
     el.empty();
     //go through the list of employees and append rows of data
-    for (employee of exampleRoster){
+    for (employee of employeeRoster){
         el.append(`
             <tr>
                 <td>${employee.firstName}</td>
@@ -58,26 +56,31 @@ function displayInfo(){
                 <td class="id-number">${employee.employeeID}</td>
                 <td>${employee.title}</td>
                 <td>${employee.annualSalary}</td>
-                <td><button class="edit-remove">Edit/Remove</button></td>
+                <td><button class="edit-remove">Remove</button></td>
             </tr>
         `)   
     }//end for
     //show total monthly labor cost
     //target span in h3 that shows it 
-    let sumShow=$('#total-cost');
-    let totalSalary=addSalaries();
-    sumShow.empty();
-    sumShow.append(`Total Monthly Labor Cost: ${totalSalary}`);
-}
+    let sumSpan=$('#total-cost span');
+    let totalMonthly=addSalaries()/12;
+    sumSpan.empty();
+    sumSpan.append(` ${totalMonthly}`);
+    if (totalMonthly>20000){
+        sumSpan.css('background-color', 'red');
+    }else{
+        sumSpan.css('background-color', 'inherit');
+    }
+}//end displayInfo
 
 function addSalaries(){
     let totalSalary=0;
     //go through employee list
-    for (employee of exampleRoster){
+    for (employee of employeeRoster){
         totalSalary+=Number(employee.annualSalary);
     }
     return totalSalary;
-}
+}//end addSalaries
 
 function addNewEmployee(){
     //using values from the input boxes, make new employeeObject
@@ -89,7 +92,7 @@ function addNewEmployee(){
         annualSalary: $('#annualSalaryIn').val(),
     }
     //add that new employeeObject to the array of employee objects
-    exampleRoster.push(employeeObject);
+    employeeRoster.push(employeeObject);
     //display the new list of employees and the total labor cost
     displayInfo();
     //clear the input fields
@@ -98,7 +101,7 @@ function addNewEmployee(){
     $('#employeeIDIn').val('');
     $('#titleIn').val('');
     $('#annualSalaryIn').val('');
-}
+}//end addNewEmployee
 
 function removeEmployee(){
     //target table row that contains the button- its parent's parent
@@ -106,10 +109,10 @@ function removeEmployee(){
     //use .text() to get a string of what's in the table row
     let rowText = trEl.text();
     //go through employee list- if the employee's ID is in the string of row text, remove from list!
-    for (let i=0; i<exampleRoster.length; i++) {
-        let thisID = exampleRoster[i].employeeID;
+    for (let i=0; i<employeeRoster.length; i++) {
+        let thisID = employeeRoster[i].employeeID;
         if (rowText.includes(thisID)) {
-            exampleRoster.splice(i, 1);
+            employeeRoster.splice(i, 1);
             displayInfo();
         }
     }//end for
