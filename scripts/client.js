@@ -1,5 +1,5 @@
 $(onReady);
-///-----DECLARE_VARIABLES-----///
+///-----SETUP-----///
 let exampleEmployee1= {
     firstName: 'Haley',
     lastName: 'Ryan',
@@ -35,13 +35,14 @@ let exampleEmployee4 = {
 let employeeRoster = [];
 
 function onReady(){
+    displayInfo();
     //set up click listener on existing submit button
     $('#addEmployeeButton').on('click', addNewEmployee);
     //set up click listeners on not-yet existing employee delete buttons
     $('#employee-table tbody').on('click', '.edit-remove', removeEmployee);
 }//end onReady
 
-///-----FUNCTIONS-----///
+///-----CALLED_FUNCTIONS-----///
 function displayInfo(){
     //identify table body as the place to put stuff
     let el = $('#employee-table tbody');
