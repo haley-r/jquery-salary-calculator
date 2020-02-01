@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display+SC:700i&display=swap');
+
+
 body {
     background-color: rgb(236, 194, 191);
+}
+
+h1,h2 {
+    font-family: 'Playfair Display SC', serif;
 }

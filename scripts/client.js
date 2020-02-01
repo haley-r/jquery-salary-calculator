@@ -1,37 +1,5 @@
 $(onReady);
 ///-----SETUP-----///
-let exampleEmployee1= {
-    firstName: 'Haley',
-    lastName: 'Ryan',
-    employeeID: 1234,
-    title: 'Student',
-    annualSalary: 5,
-}
-
-let exampleEmployee2 = {
-    firstName: 'Dad',
-    lastName: 'Erino',
-    employeeID: 666,
-    title: 'Alarm Clock',
-    annualSalary: 5000,
-}
-
-let exampleEmployee3 = {
-    firstName: 'Stub',
-    lastName: 'Erino',
-    employeeID: 667,
-    title: 'Councilperson',
-    annualSalary: 5001,
-}
-
-let exampleEmployee4 = {
-    firstName: 'Lyn',
-    lastName: 'Corelle',
-    employeeID: 4321,
-    title: 'Author',
-    annualSalary: 1000000,
-}
-
 let employeeRoster = [];
 
 function onReady(){
