@@ -1,10 +1,64 @@
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display+SC:700i&display=swap');
 
-
 body {
     background-color: rgb(236, 194, 191);
+    text-align:center;
+    box-sizing: border-box;
 }
 
 h1,h2 {
     font-family: 'Playfair Display SC', serif;
+}
+
+h2 {
+    margin-top: 0;
+    margin-bottom: .5em;
+}
+
+h3 {
+    text-align :right;
+    margin-top: 2em;
+    font-style: italic;
+}
+
+input {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#addEmployeeButton {
+    margin: 1em;
+}
+
+.input-section {
+    width: 30vw;
+    background-color: rgb(209, 143, 143);
+    margin: 0 auto 0 auto;
+}
+
+.display-table {
+    margin: 2em auto 0 auto;
+    width: 90%;
+}
+
+#employee-table {
+    width: 100%;
+}
+
+/* thead {
+    display: block;
+    border-bottom: 2px solid rgb(209, 143, 143);
+    color: rgb(209, 143, 143);
+    font: italic .8em 'Playfair Display SC', serif;
+}
+
+th {
+    padding: 0;
+    width: 15%;
+} */
+
+.edit-remove {
+    background-color: rgb(209, 143, 143);
+    font-style: italic;
 }
