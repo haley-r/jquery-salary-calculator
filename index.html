@@ -17,9 +17,9 @@
         <h2>Add Employee</h2>
         <input type="text" placeholder="First Name" id="firstNameIn">
         <input type="text" placeholder="Last Name" id="lastNameIn">
-        <input type="number" placeholder="ID" id="idNumberIn">
-        <input type="text" placeholder="Title" id="firstNameIn">
-        <input type="number" placeholder="Annual Salary" id="firstNameIn">
+        <input type="number" placeholder="ID" id="employeeIDIn">
+        <input type="text" placeholder="Title" id="titleIn">
+        <input type="number" placeholder="Annual Salary" id="annualSalaryIn">
         <button id="submitButton">Submit</button>
     </section><!--.input-section-->
     <section class="display-table">
@@ -35,8 +35,11 @@
                     <th>Actions</th>
                 </tr>
             </thead>
+            <tbody>
+                <!--employee info will go here-->
+            </tbody>
         </table>
-        <h3>Total Monthly Labor Cost:</h3>
+        <h3 id="total-cost">Total Monthly Labor Cost:<span></span></h3>
     </section><!--.employee-table-->
 </body>
 </html>
