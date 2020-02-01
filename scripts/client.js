@@ -55,7 +55,7 @@ function displayInfo(){
             <tr>
                 <td>${employee.firstName}</td>
                 <td>${employee.lastName}</td>
-                <td>${employee.employeeID}</td>
+                <td class="id-number">${employee.employeeID}</td>
                 <td>${employee.title}</td>
                 <td>${employee.annualSalary}</td>
                 <td><button class="edit-remove">Edit/Remove</button></td>
@@ -101,15 +101,19 @@ function addNewEmployee(){
 }
 
 function removeEmployee(){
-    let buttonElement = $(this);
-    let tdElement = buttonElement.parent();
-    let trElement= tdElement.parent();
-    trElement.remove();
-}
+    //target table row that contains the button- its parent's parent
+    let trEl = ($(this).parent()).parent();
+    //use .text() to get a string of what's in the table row
+    let rowText = trEl.text();
+    //go through employee list- if the employee's ID is in the string of row text, remove from list!
+    for (let i=0; i<exampleRoster.length; i++) {
+        let thisID = exampleRoster[i].employeeID;
+        if (rowText.includes(thisID)) {
+            exampleRoster.splice(i, 1);
+            displayInfo();
+        }
+    }//end for
+}//end removeEmployee
+////this function won't work if it the employee annual salary contains the same string of numbers as the employee ID. should be more specific, but it works at a basic level now.
 
-// function whoAreParents(){
-//     console.log("parents are the ones who really care");
-//     console.log('the parent of body is', $('body').parent());
-// }
 
-// whoAreParents();
