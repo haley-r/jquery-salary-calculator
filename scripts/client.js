@@ -37,7 +37,7 @@ function displayInfo(){
     sumSpan.empty();
     sumSpan.append(` $${totalMonthlyRounded}`);
     if (totalMonthlyRounded>20000){
-        sumSpan.css('background-color', 'red');
+        sumSpan.css('background-color', 'rgb(227, 89, 82)');
     }else{
         sumSpan.css('background-color', 'inherit');
     }
