@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display+SC:700i&display=swap');
 
 body {
-    background-color: rgb(236, 194, 191);
+    background-color: rgb(212, 174, 93);
     text-align:center;
     box-sizing: border-box;
+    color: rgb(58, 105, 19);
 }
 
 h1,h2 {
@@ -11,8 +12,7 @@ h1,h2 {
 }
 
 h2 {
-    margin-top: 0;
-    margin-bottom: .5em;
+    margin: 0 .25em .5em .25em;
 }
 
 h3 {
@@ -27,8 +27,15 @@ input {
     margin-right: auto;
 }
 
+button {
+    text-transform: lowercase;
+    font-style: italic;
+}
+
 #addEmployeeButton {
     margin: 1em;
+    background-color: rgb(58, 105, 19);
+    color: white;
 }
 
 .input-section {
@@ -60,5 +67,4 @@ th {
 
 .edit-remove {
     background-color: rgb(209, 143, 143);
-    font-style: italic;
 }
