@@ -6,8 +6,9 @@ function onReady(){
     displayInfo();
     //set up click listener on existing submit button
     $('#addEmployeeButton').on('click', addNewEmployee);
-    //set up click listeners on not-yet existing employee delete buttons
+    //set up click listeners on not-yet existing buttons
     $('#employee-table tbody').on('click', '.edit-remove', removeEmployee);
+    $('body').on('click', '.pop-up', clickAway);
 }//end onReady
 
 ///-----CALLED_FUNCTIONS-----///
@@ -73,6 +74,18 @@ function addNewEmployee(){
     $('#annualSalaryIn').val('');
 }//end addNewEmployee
 
+function popUpRemoved(){
+    $('body').append(`
+        <div class="pop-up">
+            <h4>Employee has been removed from the database.</h4>
+        <//div>
+    `)
+}
+
+function clickAway(){
+    $('.pop-up').remove();
+}
+
 function removeEmployee(){
     //target table row that contains the button- its parent's parent
     let trEl = ($(this).parent()).parent();
@@ -84,6 +97,8 @@ function removeEmployee(){
         if (rowText.includes(thisID)) {
             employeeRoster.splice(i, 1);
             displayInfo();
+            //give user a pop up saying the user has been removed
+            popUpRemoved();
         }
     }//end for
 }//end removeEmployee

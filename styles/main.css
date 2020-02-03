@@ -53,18 +53,23 @@ button {
     width: 100%;
 }
 
-/* thead {
-    display: block;
-    border-bottom: 2px solid rgb(209, 143, 143);
-    color: rgb(209, 143, 143);
-    font: italic .8em 'Playfair Display SC', serif;
-}
-
-th {
-    padding: 0;
-    width: 15%;
-} */
-
 .edit-remove {
     background-color: rgb(209, 143, 143);
+}
+
+.pop-up {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding-top: 50%;
+    background-color: rgba(58, 105, 19, .8);
+    color: rgb(209, 143, 143);
+    font-style:italic;
+}
+
+h4 { 
+    text-transform: uppercase;
 }
